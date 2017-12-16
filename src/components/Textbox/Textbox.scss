@@ -1,6 +1,36 @@
-input {
+.textbox-container {
+    width: 500px;
+    margin-left: 100px;
+}
+
+.textbox-container > input {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
+    border: none;
+    font-size: 22px;
+    text-align: center;
     box-sizing: border-box;
+    border-bottom: 2px solid rgba(119, 119, 119, 0.3);
+    border-radius: 2px;
+    backface-visibility: hidden;
+}
+
+.textbox-container > input:focus {
+    outline: none;
+    animation-name: bottomBorderFadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes bottomBorderFadeIn {
+
+    0% {
+        border-bottom: 1px solid rgba(104, 239, 173, 0);
+    }
+
+    100% {
+        border-bottom: 3px solid rgba(104, 239, 173, 1);
+        box-shadow: 0 6px 6px -6px rgba(104, 239, 173, 1);
+    }
 }

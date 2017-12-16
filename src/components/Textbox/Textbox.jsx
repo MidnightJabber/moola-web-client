@@ -10,7 +10,7 @@ class Textbox extends Component {
 
     render() {
         return (
-            <div>
+            <div class="textbox-container">
                 <input />
             </div>
         );
