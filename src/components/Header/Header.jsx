@@ -5,7 +5,7 @@ import './Header.scss';
 const Header = (props) => {
     return (
         <div className="header">
-            <h1>ReactTemplate</h1>
+            <h1>Moola</h1>
         </div>
     );
 }
