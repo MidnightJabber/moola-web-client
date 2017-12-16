@@ -7,7 +7,8 @@ class App extends Component {
     render() {
         return (
             <div className="app-container">
-                <Textbox />
+                <Textbox placeholder="Email"/>
+                <Textbox type="password" placeholder="Password"/>
             </div>
         );
     }
