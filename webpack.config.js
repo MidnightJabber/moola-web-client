@@ -52,7 +52,7 @@ module.exports = {
         new CleanWebpackPlugin(['dist']),
         new CopyWebpackPlugin([ {from:'./src/assets/images',to:'assets/images'} ]),
         new HtmlWebpackPlugin({
-          title: 'Output Management',
+          title: 'Moola',
           inject: false,
           template: require('html-webpack-template'),
           appMountId: 'content'

@@ -5,12 +5,15 @@ let ValidationType = {
     IsNumber: 3,
     IsArray: 4,
     IsObject: 5,
+    MinLength: 6,
+    MaxLength: 7
 }
 
 class Validator {
 
-    constructor(validationType) {
+    constructor(validationType, args) {
         this.validationType = validationType;
+        this.args = args;
     }
 
     isValid(input, validationType = this.validationType) {
@@ -21,6 +24,9 @@ class Validator {
 
             case ValidationType.NotNullOrEmpty:
                 return this.computeNotNullOrEmpty(input);
+
+            case ValidationType.MaxLength:
+                return this.computeMaxLength(input);
 
             default:
                 return false;
@@ -46,6 +52,14 @@ class Validator {
         }
 
         return isNotNull || input.length != 0;
+    }
+
+    computeMinLength(input) {
+
+    }
+
+    computeMaxLength(input) {
+        return input.length <= this.args
     }
 }
 
