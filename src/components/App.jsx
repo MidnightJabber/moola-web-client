@@ -9,7 +9,7 @@ class App extends Component {
             <div className="app-container">
                 <Textbox validations={[new Validator(ValidationType.MaxLength, 10)]}placeholder="Email"/>
                 <Textbox type="password" placeholder="Password"/>
-                <Textbox id="1" placeholder={["Enter Item Name", "eg: Benny\'s Doghnuts", "Got it?"]}/>
+                <Textbox placeholder={["Enter Item Name", "eg: Benny\'s Doghnuts", "Got it?"]}/>
             </div>
         );
     }

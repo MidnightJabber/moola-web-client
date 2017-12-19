@@ -1,9 +1,15 @@
 .textbox-container {
-    width: 500px;
-    margin-left: 100px;
-}
 
-.textbox-container {
+    display: flex;
+    width: 100%;
+
+    > .textbox-error-badge {
+        z-index: 1;
+        margin-left: -35px;
+        margin-top: 20px;
+        color: #C62828;
+    }
+
     > input {
         width: 100%;
         padding: 12px 20px;
@@ -34,10 +40,6 @@
             transition: opacity 0.5s linear;
         }
 
-        &.opacity-0::placeholder {
-            opacity: 0;
-        }
-
         &:focus {
             outline: none;
             animation-name: bottomBorderFadeIn;
@@ -47,8 +49,8 @@
         }
 
         &.incorrect {
-            border-bottom: 3px solid rgba(104, 0, 0, 1);
-            box-shadow: 0 6px 6px -6px rgba(104, 0, 0, 1);
+            border-bottom: 3px solid #C62828;
+            box-shadow: 0 6px 6px -6px #C62828;
         }
     }
 }
@@ -62,20 +64,5 @@
     100% {
         border-bottom: 3px solid rgba(104, 239, 173, 1);
         box-shadow: 0 6px 6px -6px rgba(104, 239, 173, 1);
-    }
-}
-
-@keyframes textboxPlaceholderFade {
-
-    0% {
-        opacity: 0.8;
-    }
-
-    50% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 0.8
     }
 }

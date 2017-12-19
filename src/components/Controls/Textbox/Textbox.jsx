@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Guid from 'guid';
 import MdErrorOutline from 'react-icons/lib/md/error-outline';
 import $ from 'jquery';
 
@@ -15,13 +16,16 @@ class Textbox extends Component {
             currentPlaceholderText: this.getInitialPlaceHolderText()
         }
 
+        this.placeholderAnimationId = null;
+
+        this.id = Guid.create();
+
         this.initializePlaceHolderText();
     }
 
     /**
-     * [handleChange description]
-     * @param  {[type]} event [description]
-     * @return {[type]}       [description]
+     * Textbox input change handler.
+     * @param  {object} event window event object
      */
     handleChange = (event) => {
 
@@ -32,8 +36,9 @@ class Textbox extends Component {
     }
 
     /**
-     * [getInitialPlaceHolderText description]
-     * @return {[type]} [description]
+     * Provides the initial placeholder text for a looping placeholder textbox
+     * or the initial and only placeholder text of a static placeholder textbox.
+     * @return {string} initial placeholder text
      */
     getInitialPlaceHolderText() {
         let placeholderText = "";
@@ -49,20 +54,20 @@ class Textbox extends Component {
     }
 
     /**
-     * [initializePlaceHolderText description]
-     * @return {[type]} [description]
+     * Sets up the interval callback on the textbox if there is need for more than
+     * one placeholder text to be configured.
      */
     initializePlaceHolderText() {
 
         // Only add a time based callback if placeholder text is an array and has more than one elements
         if(Array.isArray(this.props.placeholder) && this.props.placeholder.length > 1) {
-            this.placeHolderTextIntervalId = setInterval(() => {
-                
-                $('#1').removeClass('textbox-placeholder-fade-in');
-                $('#1').addClass('textbox-placeholder-fade-out');
+            this.placeholderAnimationId = setInterval(() => {
+
+                $(`#${this.id}`).removeClass('textbox-placeholder-fade-in');
+                $(`#${this.id}`).addClass('textbox-placeholder-fade-out');
                 setTimeout(() => {
-                    $('#1').removeClass('textbox-placeholder-fade-out');
-                    $('#1').addClass('textbox-placeholder-fade-in');
+                    $(`#${this.id}`).removeClass('textbox-placeholder-fade-out');
+                    $(`#${this.id}`).addClass('textbox-placeholder-fade-in');
 
                     let index = this.props.placeholder.indexOf(this.state.currentPlaceholderText);
 
@@ -76,6 +81,13 @@ class Textbox extends Component {
                 }, 500);
             }, this.props.placeholderAnimationDuration ? this.props.placeholderAnimationDuration : 10000);
         }
+    }
+
+    /**
+     * Stops the palceholder text rotation within the textbox.
+     */
+    stopPlaceholderAnimation() {
+        clearInterval(this.placeholderAnimationId);
     }
 
     /**
@@ -103,7 +115,7 @@ class Textbox extends Component {
     render() {
         return (
             <div className="textbox-container">
-                <input id={ this.props.id } className = { this.state.isValid ? "" : "incorrect" }
+                <input id={ this.id } className = { this.state.isValid ? "" : "incorrect" }
                        onChange={ this.handleChange }
                        type={ this.props.type }
                        placeholder={ this.state.currentPlaceholderText }
