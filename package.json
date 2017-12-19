@@ -1,5 +1,5 @@
 {
-  "name": "ReactTemplate",
+  "name": "moola-web-client",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -13,22 +13,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sukritchhabra/ReactTemplate.git"
+    "url": "git+https://github.com/MidnightJabber/moola-web-client.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sukritchhabra/ReactTemplate/issues"
+    "url": "https://github.com/MidnightJabber/moola-web-client/issues"
   },
-  "homepage": "https://github.com/sukritchhabra/ReactTemplate#readme",
+  "homepage": "https://github.com/MidnightJabber/moola-web-client#readme",
   "dependencies": {
+    "guid": "0.0.12",
     "jquery": "^3.2.1",
     "lodash": "^4.17.4",
     "material-ui": "^1.0.0-beta.16",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-icons": "^2.2.7",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "whatwg-fetch": "^2.0.3"

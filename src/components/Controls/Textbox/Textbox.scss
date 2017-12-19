@@ -1,0 +1,68 @@
+.textbox-container {
+
+    display: flex;
+    width: 100%;
+
+    > .textbox-error-badge {
+        z-index: 1;
+        margin-left: -35px;
+        margin-top: 20px;
+        color: #C62828;
+    }
+
+    > input {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        border: none;
+        font-size: 22px;
+        color: #777;
+        text-align: center;
+        box-sizing: border-box;
+        border-bottom: 2px solid rgba(119, 119, 119, 0.3);
+        border-radius: 2px;
+        backface-visibility: hidden;
+
+        &::placeholder {
+            font-weight: 100;
+            font-size: 20px;
+            color: #AAA;
+            text-align: center;
+        }
+
+        &.textbox-placeholder-fade-out::placeholder {
+            opacity: 0;
+            transition: opacity 0.5s linear;
+        }
+
+        &.textbox-placeholder-fade-in::placeholder {
+            opacity: 0.8;
+            transition: opacity 0.5s linear;
+        }
+
+        &:focus {
+            outline: none;
+            animation-name: bottomBorderFadeIn;
+            animation-duration: 0.5s;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+        }
+
+        &.incorrect {
+            border-bottom: 3px solid #C62828;
+            box-shadow: 0 6px 6px -6px #C62828;
+        }
+    }
+}
+
+@keyframes bottomBorderFadeIn {
+
+    0% {
+        border-bottom: 1px solid rgba(104, 239, 173, 0);
+    }
+
+    100% {
+        border-bottom: 3px solid rgba(104, 239, 173, 1);
+        box-shadow: 0 6px 6px -6px rgba(104, 239, 173, 1);
+    }
+}
