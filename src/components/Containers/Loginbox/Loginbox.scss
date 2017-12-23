@@ -1,0 +1,23 @@
+.loginbox-container {
+
+    width: 500px;
+    height: 300px;
+    position: relative;
+    box-sizing: border-box;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5%;
+    border: 1px solid #212121;
+    background-color: #424242;
+    padding: 20px;
+    box-shadow: 10px 13px 25px 0px #757575;
+
+    .loginbox-textbox-section {
+
+    }
+
+    .loginbox-button-section {
+
+    }
+}
