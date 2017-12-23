@@ -135,7 +135,9 @@ Textbox.propTypes = {
         PropTypes.string,
         PropTypes.array
     ]),
-    placeholderAnimationDuration: PropTypes.number
+    customStyles: PropTypes.object,
+    placeholderAnimationDuration: PropTypes.number,
+    validations: PropTypes.array
 }
 
 export default Textbox;

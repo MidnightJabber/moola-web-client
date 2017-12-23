@@ -1,0 +1,18 @@
+.button-container {
+
+    > button {
+        border: none;
+        width: 150px;
+        height: 30px;
+        cursor: pointer;
+        overflow: hidden;
+        word-wrap: break-word;
+        color: white;
+        font-size: 22px;
+        background-color: rgba(104, 239, 173, 1);
+    }
+
+    > button:active {
+        transform: translateY(0.5px);
+    }
+}
