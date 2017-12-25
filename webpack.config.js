@@ -39,7 +39,12 @@ module.exports = {
     },
 
     resolve: {
-      extensions: ['.js', '.jsx']
+      extensions: ['.js', '.jsx'],
+      alias: {
+        Components: path.resolve(__dirname, 'src/components/'),
+        Queries: path.resolve(__dirname, 'src/Queries/'),
+        Mutations: path.resolve(__dirname, 'src/Mutations/')
+      }
     },
 
     devServer: {
