@@ -4,6 +4,9 @@ import Textbox from '../../Controls/Textbox/Textbox';
 import Validator, { ValidationType } from '../../../Utils/Validator';
 import Button from '../../Controls/Button/Button';
 
+import { graphql } from 'react-apollo';
+import query from '../../../Queries/CurrentUser';
+
 import './Loginbox.scss';
 
 const Loginbox = (props) => {
@@ -12,10 +15,11 @@ const Loginbox = (props) => {
         color: "#555"
     };
 
+    console.log(props.data);
     return (
         <div className="loginbox-container">
             <div className="loginbox-textbox-section">
-                <Textbox validations={[new Validator(ValidationType.MaxLength, 10)]} placeholder="Email"/>
+                <Textbox validations={ props.emailValidations } placeholder="Email"/>
                 <Textbox type="password" placeholder="Password"/>
             </div>
 
@@ -32,4 +36,4 @@ Loginbox.propTypes = {
     buttonValidations: PropTypes.array
 }
 
-export default Loginbox;
+export default graphql(query)(Loginbox);

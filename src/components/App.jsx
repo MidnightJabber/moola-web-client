@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
-import Loginbox from './Containers/Loginbox/Loginbox';
-import Validator, { ValidationType } from '../Utils/Validator';
+import { Router, Route, IndexRoute } from 'react-router';
+import Login from './Login';
+import Dashboard from './Dashboard';
 
 class App extends Component {
     render() {
         return (
             <div>
-                <Loginbox emailValidations={[new Validator(ValidationType.MaxLength, 10)]} />
+                <Route path="/login" component={Login} />
+                <Route path="/dashboard" component={Dashboard} />
             </div>
         );
     }
