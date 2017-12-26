@@ -4,12 +4,27 @@ import mutation from "Mutations/Logout";
 import query from 'Queries/CurrentUser';
 
 import LogoText from 'Components/Elements/LogoText/LogoText';
+import Avatar from 'Components/Elements/Avatar/Avatar';
+
 import "./Header.scss";
 
 class Header extends Component {
 
     constructor(props) {
         super(props);
+
+        this.menuItems = [
+            {
+                key: "profile",
+                title: "Profile",
+                onClick: () => console.log('Profile clicked')
+            },
+            {
+                key: "logout",
+                title: "Logout",
+                onClick: this.onLogoutClick.bind(this)
+            }
+        ];
     }
 
     onLogoutClick() {
@@ -24,7 +39,7 @@ class Header extends Component {
         return (
             <header className="header-container">
                 <LogoText />
-                <button onClick={ this.onLogoutClick.bind(this) }>Logout</button>
+                <Avatar menuItems={ this.menuItems } />
             </header>
         );
     }
