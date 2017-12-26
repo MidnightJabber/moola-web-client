@@ -1,0 +1,45 @@
+.avatar-dropdown-container {
+    width: 100%;
+    height: auto;
+    background-color: #121417;
+    box-shadow: -4px 7px 12px -1px #333;
+
+    > .avatar-menu-userinfo {
+        display: inline-block;
+        padding-top: 10px;
+        padding-left: 10px;
+
+        > .avatar-menu-userinfo-title {
+            display: block;
+            font-size: 12px;
+        }
+
+        > .avatar-menu-userinfo-username {
+            display: block;
+            font-size: 18px;
+            font-weight: 400;
+        }
+    }
+
+    > .avatar-dropdown-menu {
+        display: inline-block;
+        color: white;
+        width: 100%;
+        padding: 0px;
+        margin: 0px;
+
+        > .avatar-dropdown-menulist {
+            list-style-type: none;
+
+            > .avatar-dropdown-menuitem {
+                text-align: right;
+                padding: 10px 15px 10px 10px;
+                border-top: 1px solid #444;
+                cursor: pointer;
+            }
+            > .avatar-dropdown-menuitem:hover {
+                background-color: #414245;
+            }
+        }
+    }
+}

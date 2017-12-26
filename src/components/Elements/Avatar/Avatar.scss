@@ -1,0 +1,58 @@
+$avatars: (
+    // Row 1, Column 1
+    (
+        url: '../../../assets/Images/stock_avatar.png',
+        x: -4px,
+        y: -1px,
+        gender: 'male'
+    ),
+    // Row 1, Column 1
+    (
+        url: '../../../assets/Images/stock_avatar.png',
+        x: -51px,
+        y: -1px,
+        gender: 'female'
+    ),
+    // Row 1, Column 3
+    (
+        url: '../../../assets/Images/stock_avatar.png',
+        x: -99px,
+        y: -1px,
+        gender: 'female'
+    )
+);
+
+.avatar-container {
+
+    $randomIndex: random(length($avatars) - 1);
+
+    margin-top: -5px;
+    margin-right: -25px;
+    padding-right: 50px;
+
+    float: right;
+
+    > .sprite {
+        background: url(map-get(nth($avatars, $randomIndex), 'url')) no-repeat map-get(nth($avatars, $randomIndex), 'x') map-get(nth($avatars, $randomIndex), 'y');
+        background-size: 150px 150px;
+    	width: 50px;
+    	height: 50px;
+        background-color: #1b5e20;
+        border-radius: 50%;
+        float: right;
+        z-index: 3;
+        cursor: pointer;
+    }
+
+    > .sprite:hover {
+        box-shadow: 0.2px 1px 12px 3px #00c853;
+    }
+
+    > .avatar-menu {
+        z-index: 2;
+        margin-top: 30px;
+        margin-right: -20px;
+        width: 200px;
+        height: 200px;
+    }
+}
