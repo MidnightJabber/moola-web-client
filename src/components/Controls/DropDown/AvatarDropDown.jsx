@@ -29,7 +29,7 @@ class AvatarDropDown extends Component {
             <div className="avatar-dropdown-container">
                 <div className="avatar-menu-userinfo">
                     <span className="avatar-menu-userinfo-title">Signed in as:</span>
-                    <span className="avatar-menu-userinfo-username">vreddi</span>
+                    <span className="avatar-menu-userinfo-username">{ this.props.userEmail }</span>
                 </div>
                 <ul className="avatar-dropdown-menu">
                     <div className="avatar-dropdown-menulist">
@@ -43,6 +43,7 @@ class AvatarDropDown extends Component {
 
 AvatarDropDown.propTypes = {
     menuItems: PropTypes.array,
+    userEmail: PropTypes.string
 }
 
 export default AvatarDropDown;

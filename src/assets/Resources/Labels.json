@@ -1,0 +1,8 @@
+{
+    "Button": {
+        "Login": {
+            "value": "Login",
+            "comment": "Text label of a login button"
+        }
+    }
+}

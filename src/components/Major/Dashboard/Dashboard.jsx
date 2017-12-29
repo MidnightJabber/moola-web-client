@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import { graphql } from 'react-apollo';
 import query from 'Queries/CurrentUser';
-import { Link } from 'react-router-dom';
 
+import ErrorDashboardContent from 'Components/Containers/ErrorDashboardContent/ErrorDashboardContent';
 import DashboardContent from 'Components/Containers/DashboardContent/DashboardContent';
+
+export const DashboardStates = {
+    Unauthorized: 0
+}
 
 class Dashboard extends Component {
 
@@ -18,13 +22,7 @@ class Dashboard extends Component {
             return (<div>Loading...</div>);
         }
         else if(!loading && !user) {
-            return (
-                <div>
-                    You are not signed in.
-                    <Link to="/login">
-                        <button>Login</button>
-                    </Link>
-                </div>
+            return (<ErrorDashboardContent errorState={ DashboardStates.Unauthorized }/>
             );
         }
         else {

@@ -1,0 +1,37 @@
+.error-dashboard-container {
+    width: 100%;
+    height: 100%;
+    background-color: #0e1012;
+
+    > .unauthorized-container{
+        top: 40%;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+
+        > .unauthorized-error-container-image {
+
+            text-align: center;
+
+            > img {
+                width: 50%;
+            }
+        }
+
+        > .unauthorized-error-container {
+            color: white;
+            font-size: 26px;
+
+            > .unauthorized-error-container-text {
+                display: block;
+                text-align: center;
+            }
+
+            > .unauthorized-error-container-button {
+                margin-top: 15px;
+                display: block;
+                text-align: center;
+            }
+        }
+    }
+}

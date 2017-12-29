@@ -4,9 +4,9 @@ import Guid from 'guid';
 import MdErrorOutline from 'react-icons/lib/md/error-outline';
 import $ from 'jquery';
 
-import './Textbox.scss';
+import './TextBox.scss';
 
-class Textbox extends Component {
+class TextBox extends Component {
 
     constructor(props) {
         super(props);
@@ -32,6 +32,10 @@ class Textbox extends Component {
         let value = event.target.value,
             isValid = this.validate(this.state.value);
 
+        if(this.props.changeHandler) {
+            this.props.changeHandler(event, isValid);
+        }
+        
         this.setState({ value, isValid });
     }
 
@@ -129,7 +133,7 @@ class Textbox extends Component {
     }
 }
 
-Textbox.propTypes = {
+TextBox.propTypes = {
     type: PropTypes.string,
     placeholder: PropTypes.oneOfType([
         PropTypes.string,
@@ -137,7 +141,8 @@ Textbox.propTypes = {
     ]),
     customStyles: PropTypes.object,
     placeholderAnimationDuration: PropTypes.number,
-    validations: PropTypes.array
+    validations: PropTypes.array,
+    changeHandler: PropTypes.func
 }
 
-export default Textbox;
+export default TextBox;

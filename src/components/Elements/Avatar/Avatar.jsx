@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { graphql } from 'react-apollo';
 import PropTypes from 'prop-types';
-
+import currentUserQuery from 'Queries/CurrentUser';
 import AvatarDropDown from 'Components/Controls/DropDown/AvatarDropDown';
 import './Avatar.scss';
 
@@ -8,7 +9,7 @@ class Avatar extends Component {
 
     constructor(props) {
         super(props);
-        
+
         this.state = {
             showMenu: false
         }
@@ -19,11 +20,17 @@ class Avatar extends Component {
     }
 
     renderDropDown() {
+        const { loading, user } = this.props.data;
 
         if(this.state.showMenu) {
-            return (
-                <AvatarDropDown menuItems={ this.props.menuItems }/>
-            );
+            if(!loading && user) {
+                return (
+                    <AvatarDropDown menuItems={ this.props.menuItems } userEmail={ user.email }/>
+                );
+            }
+            else {
+                <AvatarDropDown menuItems={ this.props.menuItems } />
+            }
         }
         else {
             return;
@@ -47,4 +54,4 @@ Avatar.propTypes = {
     menuItems: PropTypes.array,
 }
 
-export default Avatar;
+export default graphql(currentUserQuery)(Avatar);

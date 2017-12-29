@@ -17,7 +17,9 @@ class Button extends Component {
         return (
             <div className="button-container">
                 <button style={ this.props.customStyles }
-                        type="button">
+                        type="button"
+                        onClick={ this.props.onClick }
+                        type={ this.props.type }>
                     { this.props.text }
                 </button>
             </div>
@@ -27,7 +29,9 @@ class Button extends Component {
 
 Button.propTypes = {
     text: PropTypes.string,
-    customStyles: PropTypes.object
+    type: PropTypes.string,
+    customStyles: PropTypes.object,
+    onClick: PropTypes.func,
 }
 
 export default Button;
