@@ -6,7 +6,7 @@ $avatars: (
         y: -1px,
         gender: 'male'
     ),
-    // Row 1, Column 1
+    // Row 1, Column 2
     (
         url: '../../../assets/Images/stock_avatar.png',
         x: -51px,
@@ -18,6 +18,48 @@ $avatars: (
         url: '../../../assets/Images/stock_avatar.png',
         x: -99px,
         y: -1px,
+        gender: 'female'
+    ),
+    // Row 2, Column 1
+    (
+        url: '../../../assets/Images/stock_avatar.png',
+        x: -3px,
+        y: -49px,
+        gender: 'female'
+    ),
+    // Row 2, Column 2
+    (
+        url: '../../../assets/Images/stock_avatar.png',
+        x: -51px,
+        y: -50px,
+        gender: 'male'
+    ),
+    // Row 2, Column 3
+    (
+        url: '../../../assets/Images/stock_avatar.png',
+        x: -98px,
+        y: -50px,
+        gender: 'male'
+    ),
+    // Row 3, Column 1
+    (
+        url: '../../../assets/Images/stock_avatar.png',
+        x: -3px,
+        y: -98px,
+        gender: 'male'
+    ),
+    // Row 3, Column 2
+    (
+        url: '../../../assets/Images/stock_avatar.png',
+        x: -51px,
+        y: -98px,
+        gender: 'female'
+    ),
+    // Row 3, Column 3
+    (
+        url: '../../../assets/Images/stock_avatar.png',
+        x: -99px,
+        y: -98px,
         gender: 'female'
     )
 );

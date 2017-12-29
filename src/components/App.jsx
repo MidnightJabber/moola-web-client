@@ -1,14 +1,24 @@
 import React, { Component } from 'react';
 import { Router, Route, IndexRoute } from 'react-router';
-import Login from './Login';
-import Dashboard from './Dashboard';
+import { Switch } from 'react-router-dom';
+import Login from 'Components/Major/Login/Login';
+import Signup from 'Components/Major/Signup/Signup';
+import Dashboard from 'Components/Major/Dashboard/Dashboard';
+
+export const Routes = {
+    Root: '/',
+    Dashboard: '/dashboard',
+    Login: '/login',
+    Signup: '/signup'
+}
 
 class App extends Component {
     render() {
         return (
             <div>
-                <Route path="/login" component={Login} />
-                <Route path="/dashboard" component={Dashboard} />
+                <Route name="Signup" path="/signup" component={Signup} />
+                <Route name="Login" path="/login" component={Login} />
+                <Route name="Dashboard" path="/dashboard" component={Dashboard} />
             </div>
         );
     }

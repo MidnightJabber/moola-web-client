@@ -36,7 +36,7 @@ module.exports = {
           }))
       },
       {
-          test: /\.(png|jpe?g|svg)$/,
+          test: /\.(png|jpe?g|svg|gif)$/,
           use: [
             {
               loader: 'url-loader',
@@ -65,7 +65,8 @@ module.exports = {
         Components: path.resolve(__dirname, 'src/components/'),
         Queries: path.resolve(__dirname, 'src/Queries/'),
         Mutations: path.resolve(__dirname, 'src/Mutations/'),
-        Assets: path.resolve(__dirname, 'src/assets/')
+        Assets: path.resolve(__dirname, 'src/assets/'),
+        Utils: path.resolve(__dirname, 'src/Utils/')
       }
     },
 

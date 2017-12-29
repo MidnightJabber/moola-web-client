@@ -1,0 +1,8 @@
+{
+    "ErrorDashboardContent": {
+        "UserNotFound": {
+            "value": "You don't seem to be signed in.",
+            "comment": "Shown on the screen when the user is not signed in."
+        }
+    }
+}

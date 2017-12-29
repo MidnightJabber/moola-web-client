@@ -4,9 +4,9 @@ import TextBox from 'Components/Controls/TextBox/TextBox';
 import Validator, { ValidationType } from 'Utils/Validator';
 import Button from 'Components/Controls/Button/Button';
 
-import './LoginBox.scss';
+import './SignupBox.scss';
 
-class LoginBox extends Component {
+class SignupBox extends Component {
 
     constructor(props) {
         super(props);
@@ -17,15 +17,9 @@ class LoginBox extends Component {
 
         this.state = {
             email: "",
-            password: ""
+            password: "",
+            confirmPassword: ""
         }
-    }
-
-    onSubmit(event) {
-        // so the form does not submit itself
-        event.preventDefault();
-
-        this.props.onSubmit(this.state);
     }
 
     emailChangeHandler(event, isValid) {
@@ -36,27 +30,39 @@ class LoginBox extends Component {
         this.setState({ password: event.target.value });
     }
 
+    confirmPasswordChangeHandler(event, isValid) {
+        this.setState({ confirmPassword: event.target.value });
+    }
+
+    onSubmit() {
+        // so the form does not submit itself
+        event.preventDefault();
+
+        this.props.onSubmit(this.state);
+    }
+
     render() {
         return (
-            <form onSubmit={ this.onSubmit.bind(this) } className="loginbox-container">
-                <div className="loginbox-textbox-section">
+            <form onSubmit={ this.onSubmit.bind(this) } className="signupbox-container">
+                <div className="signupbox-textbox-section">
                     <TextBox validations={ this.props.emailValidations } placeholder="Email" changeHandler={ this.emailChangeHandler.bind(this) }/>
                     <TextBox type="password" placeholder="Password" changeHandler={ this.passwordChangeHandler.bind(this) }/>
+                    <TextBox type="password" placeholder="Confirm Password" changeHandler={ this.confirmPasswordChangeHandler.bind(this) } />
                 </div>
 
-                <div className="loginbox-button-section">
-                    <Button text="Login" type="submit" customStyles={ this.buttonCustomStyles }/>
+                <div className="signupbox-button-section">
+                    <Button text="Sign-up" type="submit" customStyles={ this.buttonCustomStyles }/>
                 </div>
             </form>
         );
     }
 };
 
-LoginBox.propTypes = {
+SignupBox.propTypes = {
     emailValidations: PropTypes.array,
     passwordValidations: PropTypes.array,
     buttonValidations: PropTypes.array,
     onSubmit: PropTypes.func
 }
 
-export default LoginBox;
+export default SignupBox;
